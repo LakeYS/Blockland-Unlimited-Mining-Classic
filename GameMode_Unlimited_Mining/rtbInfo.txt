@@ -1,5 +1,0 @@
-id: 1860
-icon: gold-brick_16
-type: [ARCHIVED] Game-Modes
-title: Unlimited Mining
-version: 12
