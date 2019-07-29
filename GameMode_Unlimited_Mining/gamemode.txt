@@ -1,0 +1,43 @@
+ADDON Tool_RPG
+ADDON Weapon_Sword
+ADDON Weapon_Gun
+ADDON Vehicle_Tank
+ADDON Projectile_GravityRocket
+ADDON Weapon_Rocket_Launcher
+ADDON Vehicle_Jeep
+ADDON Brick_Large_Cubes
+ADDON Event_setPlayerTransform
+ADDON script_mute
+ADDON System_ReturnToBlockland
+ADDON Gamemode_UnlimitedMining
+
+
+$EnvGuiServer::Waterfile NONE
+$EnvGuiServer::Groundfile Add-ons/Ground_IT/dirt.ground
+$EnvGuiServer::Skyfile Add-Ons/Sky_Spooky1/spooky1.dml
+
+$EnvGuiServer::SunAzimuth 275
+$EnvGuiServer::SunElevation 58
+
+$MiniGame::Enabled 1
+
+$MiniGame::StartEquipName0 Mining Pick
+$MiniGame::StartEquipName1 Gun
+
+$MiniGame::GameColor 2
+$MiniGame::EnableBuilding 0
+$MiniGame::EnablePainting 1
+$MiniGame::EnableWand 0
+$MiniGame::FallingDamage 0
+$MiniGame::PlayersUseOwnBricks 0
+$MiniGame::Points_BreakBrick 0
+$MiniGame::Points_Die 0
+$MiniGame::Points_KillPlayer 0
+$MiniGame::Points_KillSelf 0
+$MiniGame::Points_PlantBrick 0
+$MiniGame::respawnTime 2
+$MiniGame::SelfDamage 0
+$MiniGame::useAllPlayersBricks 0
+$MiniGame::useSpawnBricks 0
+$MiniGame::weaponDamage 1
+

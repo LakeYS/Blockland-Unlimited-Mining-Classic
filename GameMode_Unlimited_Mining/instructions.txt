@@ -1,0 +1,218 @@
+GameMode Unlimited Mining
+
+Required Add-ons's:
+	- Tool_RPG
+	- Event_SetPlayerTransform
+
+
+This is a mod to Kalphiter's origional Infinite mining mod.  Without his efforts none of this would be possible.
+
+Basic startup
+=============
+Launch blockland
+Choose the game mode 'Unlimited Mining'
+Start the game (RTB is optional)
+enter:  /startdig
+
+All players spawn with a pickaxe and a gun.  Use the pick to mine stuff.  Use the gun to kill cement blocks and to defend your mine
+
+
+Basic Commands
+==============
+ - use: /startdig to start the mod
+ - use: /stopdig to stop mining
+ - mine ore to get money
+ - use: /upgradepick  to upgrade your pickaxe
+ - use: /buylight to buy a light
+These are unchanged from Kalphiter's origional mod
+
+
+Commands - picks
+========
+/upgradeall - upgrades your pick up to 1,000 levels, or until you run out of money - whichever comes first
+/upgradejob - starts a "job" on the server to upgrade your pick.  There are no level limits, it runs until you run out of money, or cancel it with /cancelupgrade
+
+Buying Stuff
+============
+/buyLight         - buy a light to use when the mine gets dark
+/buy Light        - same as /buyLight
+/buy bomb ##      - buy a ## size bomb.  Hit any brick to set it off
+/buy dirt ##      - buy ## units of dirt
+/buy gun          - buy a gun (useful if you loose the one you start with)
+/buy heatsuit ##  - buy ## heatsuit layers (they stack)
+/buy insurance ## - buy ## of insurance (used to protect against bad lottos)
+/buy invplacer    - buy an invulnerable cement placer (used to place invulnerable cement blocks)
+/buy pick         - same as /upgradepick
+/buy placer       - buy a cement placer. Use this to place cement blocks.  Cement blocks cannot be mined with a pick
+/buy radsuit ##   - buy ## radiation suit layers
+
+
+Donations
+=========
+/donate <player> ###     - give money to another player
+/donateDirt <player> ### - give dirt to another player
+/donateHS <player> ###   - give heatsuits to another player
+/donateRS <player> ###   - give radation suits to another player
+You cannot give pick levels or ranks to other players
+
+
+Drills
+======
+Drills cost dirt to run, but they can quickly expand your mine.  Make sure you have 30 dirt, then Enter /drill 15. Hit any brick to watch it in action.
+
+The drill command looks like this:
+/drill <depth>
+/drill <depth> <width>
+Max depth is 100, and max width is 5 (Admins have no limits)
+
+Drills with a width of more than 1 need a flat surface to start on, othewise they will act funny.  To create a flat surface, either make one brick by brick or use the /DrillD command.  (Disc Drill).
+
+The disc drill works best when used with a block of cement.  Buy a cement placer, place a block of cement. enter /DrillD 5 and then hit the block with your pick.  a nice flat area will form around the block.  you can use that area to start a drill.
+
+
+Cement
+======
+Purchase a cement placer (/buy placer), and use it to place cement blocks.  It costs dirt to place each block, but blocks cannot be mined with a pick.  If you want to remove a cement block, shoot it with your gun.  You can also shoot other people's cement.
+
+If you buy an invulnable cement placer (/buy invplacer), the blocks cannot be killed with other player's guns.  Only you can kill your own invulnerable cement.  Invulnerable cement costs much more dirt to place than regular cement.
+
+
+Structures
+==========
+Buy a cement placer, or an invulnerable cement placer and use any of these commands
+/platform XX YY     - Create a platform XX bricks wide and YY bricks long
+/platform2 XX YY ZZ - same as /platform, except it makes a 2nd platform ZZ bricks above the first one
+/wall XX YY         - Create a wall XX bricks long and YY bricks tall
+/room XX YY ZZ      - Create a room XX bricks by YY bricks by ZZ bricks tall
+Each cement block costs dirt to place, so make sure you have plenty of dirt before starting on any large projects
+
+
+Lotto Bricks
+============
+Some ores are colored bright glowing green.  These are lottery blocks.
+Lottery blocks will give you random rewards, or random penalties or random other
+things.  When you mine a lottery block it will give you a random reward or
+penalty.  Lotto blocks always have a lot of health.  The deeper the block, the bigger the reward or penalty.
+
+If the lotto penalties get to be too much, you can start over by entering: /resetmystats  But remember this resets EVERYTHING: pick level included -- use with care as there is no going back.
+
+
+Admin Stuff
+===========
+Admins need to have the mod installed for the admin GUIs to work.
+On the normal admin menu, there will be a blue button called "Mining Admin".  This brings up a window so admins can see the stats of everyone on the server.  If you are a super admin, you can actually change the values.  Just enter the value you want into each box.  Then press the button nexto each box, or press the 'All' button to update everything at once.
+
+/editore  - brings up the ore editor
+Anyone with the mod installed can bring up the ore editor.  Only Admins or Super Admins can actually change anything.
+
+
+
+Advanced Features
+=================
+
+
+Manually Add a new ore
+----------------------
+You can also add new ors by editing the MiningData.cs file  You can find the file in config/server/MiningData.cs.  Just add a new entry for the ore, or ores you want to add.
+
+Each ore defined needs the following:
+	-name
+	-value (how much $ its worth)
+	-percent chance to find it (betweeen 1 and 100)
+	-depth where you find the ore
+	-color
+	-vein length (normally 5)
+
+Some of the default ores are listed here:
+
+Ore          Value   percent     depth   color
+----         ----    ---------   -----   -----
+Einsteinium   20     87.5-89.5    -15      4
+Silver        5      90-91        all     30
+Diamond       100    88-89        all     17
+
+You can see these values stored in the miningData.cs file.  You can edit them to suit your own needs.
+
+To add a NEW ore, you will need to add a new entry to miningData.cs.  Copy one of the existing entries and change the values for your new ore:
+   new ScriptObject(MineOre) {
+         MaxPercent = "85";
+         depth = "0";
+         value = "15";
+         color = "30";
+         veinLength = "11";
+         minPercent = "84";
+         name = "Silver";
+   };
+
+
+min percent is the minimum percentage chance to find your ore
+max percent is the maximum percentage chance to find your ore
+if low percent is bigger than high percent, your ore will never be found.
+the percent is used by the random number generator to see when to place the ore.  It picks a number between 1-100 and then checks to see which ore matches.
+
+Depth is the MINIMUM depth to find your ore.  To find your ore deep in the ground, use a negative number (Einstenium is -15, so people must dig deeper than -15 to be able to find it).
+
+
+now an example:
+	-name     Smurphite
+	-value    75
+	-percent  60-65
+	-depth    25  (can only be found by digging UP by 25)
+	-color    7  (blue in the colorset)
+	-vein length 3
+
+Add the following to the end of server/config/miningData.cs
+   new ScriptObject(MineOre) {
+         MaxPercent = "65";
+         depth = "25";
+         value = "75";
+         color = "7";
+         veinLength = "3";
+         minPercent = "60";
+         name = "Smurphite";
+   };
+
+
+
+Adding a second ore:
+	-name     Bionium
+	-value    500
+	-percent  50.0-50.1
+	-depth    -500  (gotta dig deep for this one)
+	-color    27  (1st color in the 'soft' colum)
+	-vein Length 8
+
+Add the following to the end of server/config/miningData.cs
+   new ScriptObject(MineOre) {
+         MaxPercent = "50.1";
+         depth = "-500";
+         value = "500";
+         color = "27";
+         veinLength = "8";
+         minPercent = "50";
+         name = "Bionium";
+   };
+
+
+Health of each ore type is calcualted based on its value.  Higher value means more health.  Note that your percent chance values can overlap, but in general its not a good idea.
+
+The new OreEditor will take care of all the functions of adding new ores, but blockland must be running.
+
+
+Console commands
+================
+Console commands only work on the host
+
+GiveBombs(number);   -- free bomb to all players
+GiveDirt(amount);    -- free dirt for all players
+GiveHS(number);      -- free heatsuit layers for all players
+kickName(name);	     -- kick somebody from the server (this WILL give console errors)
+listminers();        -- listing of who is online and their stats
+
+
+Set stats for players:
+findclientbyname("name").pickaxeNum=Something;
+findclientbyname("name").heatsuit=Something;
+findclientbyname("name").addMoney("number");
+findclientbyname("name").stats.mineMoney= BigNumberFromString("number");
+findclientbyname("name").bomb=Something;
