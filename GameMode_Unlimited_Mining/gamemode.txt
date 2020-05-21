@@ -9,7 +9,7 @@ ADDON Brick_Large_Cubes
 ADDON Event_setPlayerTransform
 ADDON script_mute
 ADDON System_ReturnToBlockland
-ADDON Gamemode_UnlimitedMining
+ADDON GameMode_Unlimited_Mining
 
 
 $EnvGuiServer::Waterfile NONE

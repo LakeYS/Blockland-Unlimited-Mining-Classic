@@ -1,7 +1,7 @@
 if (ForceRequiredAddOn("Tool_RPG") == $Error::AddOn_NotFound)
   {
-   error("ERROR: GameMode_UnlimitedMining - required add-on Tool_RPGfound");
-   error("ERROR: GameMode_UnlimitedMining - Mod will not work right");
+   error("ERROR: GameMode_Unlimited_Mining - required add-on Tool_RPGfound");
+   error("ERROR: GameMode_Unlimited_Mining - Mod will not work right");
    return;
   }
 

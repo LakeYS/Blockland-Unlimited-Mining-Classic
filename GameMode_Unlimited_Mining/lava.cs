@@ -10,7 +10,7 @@ if (isFile("Add-Ons/System_ReturnToBlockland/server.cs"))
    if (!$RTB::RTBR_ServerControl_Hook)
      exec("Add-Ons/System_ReturnToBlockland/RTBR_ServerControl_Hook.cs");
 
-   RTB_registerPref("Lava Method","Unlimited Mining","$Dig_LavaMethod","list Blobs Blocks ","GameMode_UnlimitedMining","Blobs",0,0);
+   RTB_registerPref("Lava Method","Unlimited Mining","$Dig_LavaMethod","list Blobs Blocks ","GameMode_Unlimited_Mining","Blobs",0,0);
   }
 else
   {

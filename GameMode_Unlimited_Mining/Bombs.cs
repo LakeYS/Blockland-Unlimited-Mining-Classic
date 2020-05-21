@@ -3,8 +3,8 @@
 
 if (ForceRequiredAddOn("Vehicle_Tank") == $Error::AddOn_NotFound)
   {
-   error("ERROR: GameMode_UnlimitedMining - required add-on Vehicle_Tank not found");
-   error("ERROR: GameMode_UnlimitedMining - Bombs are disabled");
+   error("ERROR: GameMode_Unlimited_Mining - required add-on Vehicle_Tank not found");
+   error("ERROR: GameMode_Unlimited_Mining - Bombs are disabled");
    $Dig_Data_BombSizeMax=0;
    $Dig_Data_BombSizeBuyLimit=0;
    return;
@@ -15,10 +15,10 @@ if (isFile("Add-Ons/System_ReturnToBlockland/server.cs"))
    if (!$RTB::RTBR_ServerControl_Hook)
      exec("Add-Ons/System_ReturnToBlockland/RTBR_ServerControl_Hook.cs");
 
-   RTB_registerPref("Bomb Cost","Unlimited Mining","$Dig_Data_BombCost","int 0 5000","GameMode_UnlimitedMining",200,0,0);
-   RTB_registerPref("Bomb Size Max","Unlimited Mining","$Dig_Data_BombSizeMax","int 0 100","GameMode_UnlimitedMining",35,0,0);
-   RTB_registerPref("Bomb Size Buy Limit","Unlimited Mining","$Dig_Data_BombSizeBuyLimit","int 0 100","GameMode_UnlimitedMining",20,0,0);
-   RTB_registerPref("Domant Bombs","Unlimited Mining","$Dig_Data_DormantBombs","bool","GameMode_UnlimitedMining",true,0,0,"ToggleDormantBombs");
+   RTB_registerPref("Bomb Cost","Unlimited Mining","$Dig_Data_BombCost","int 0 5000","GameMode_Unlimited_Mining",200,0,0);
+   RTB_registerPref("Bomb Size Max","Unlimited Mining","$Dig_Data_BombSizeMax","int 0 100","GameMode_Unlimited_Mining",35,0,0);
+   RTB_registerPref("Bomb Size Buy Limit","Unlimited Mining","$Dig_Data_BombSizeBuyLimit","int 0 100","GameMode_Unlimited_Mining",20,0,0);
+   RTB_registerPref("Domant Bombs","Unlimited Mining","$Dig_Data_DormantBombs","bool","GameMode_Unlimited_Mining",true,0,0,"ToggleDormantBombs");
   }
 else
   {

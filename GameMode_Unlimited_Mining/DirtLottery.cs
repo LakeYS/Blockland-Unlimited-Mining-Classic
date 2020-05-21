@@ -8,7 +8,7 @@ if (isFile("Add-Ons/System_ReturnToBlockland/server.cs"))
    if (!$RTB::RTBR_ServerControl_Hook)
      exec("Add-Ons/System_ReturnToBlockland/RTBR_ServerControl_Hook.cs");
 
-	 RTB_registerPref("Lotto Blocks","Unlimited Mining","$Dig_Data_LottoBlocksEnabled","bool","GameMode_UnlimitedMining",true,0,0,"ToggleLottoBlocks");
+	 RTB_registerPref("Lotto Blocks","Unlimited Mining","$Dig_Data_LottoBlocksEnabled","bool","GameMode_Unlimited_Mining",true,0,0,"ToggleLottoBlocks");
   }
 else
   {

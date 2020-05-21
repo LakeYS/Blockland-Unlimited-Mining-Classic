@@ -6,7 +6,7 @@ if (isFile("Add-Ons/System_ReturnToBlockland/server.cs"))
    if (!$RTB::RTBR_ServerControl_Hook)
      exec("Add-Ons/System_ReturnToBlockland/RTBR_ServerControl_Hook.cs");
 
-   RTB_RegisterPref("Inv Cement Cost","Unlimited Mining", "$Dig_CementCostt","int 1 5000","GameMode_UnlimitedMining",$Dig_CementCost,0,0);
+   RTB_RegisterPref("Inv Cement Cost","Unlimited Mining", "$Dig_CementCostt","int 1 5000","GameMode_Unlimited_Mining",$Dig_CementCost,0,0);
   }
 else
   {

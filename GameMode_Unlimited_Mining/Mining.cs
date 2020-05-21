@@ -6,15 +6,15 @@ if (isFile("Add-Ons/System_ReturnToBlockland/server.cs"))
    if (!$RTB::RTBR_ServerControl_Hook)
      exec("Add-Ons/System_ReturnToBlockland/RTBR_ServerControl_Hook.cs");
 
-   RTB_registerPref("Brick Limit"      ,"Unlimited Mining","$Dig_Data_BrickLimit",    "int 0 350000","GameMode_UnlimitedMining",250000,0,0);
-   RTB_registerPref("Heatsuit Cost"    ,"Unlimited Mining","$Dig_Data_HeatsuitCost",  "int 0 5000",  "GameMode_UnlimitedMining",200,0,0);
-   RTB_registerPref("Radiation suit Cost","Unlimited Mining","$Dig_Data_RadsuitCost", "int 0 5000",  "GameMode_UnlimitedMining",500,0,0);
-   RTB_registerPref("Light Cost"       ,"Unlimited Mining", "$Dig_Data_LightCost",    "int 0 5000",  "GameMode_UnlimitedMining",25,0,0);
-   RTB_registerPref("Dirt Cost"        ,"Unlimited Mining", "$Dig_Data_DirtCost",     "int 0 5000",  "GameMode_UnlimitedMining",1,0,0);
-   RTB_RegisterPref("Kill Warning"     ,"Unlimited Mining", "$Dig_Data_KillWarning",  "int 1 500",   "GameMode_UnlimitedMining",3,0,0);
-   RTB_RegisterPref("Kill Limit"       ,"Unlimited Mining", "$Dig_Data_KillLimit",    "int 1 500",   "GameMode_UnlimitedMining",4,0,0);
-   RTB_RegisterPref("Low Spawn Limit"  ,"Unlimited Mining", "$Dig_Data_LowSpawnLimit","int 1 10000", "GameMode_UnlimitedMining",7000,0,0);
-   RTB_RegisterPref("High Spawn Limit" ,"Unlimited Mining", "$Dig_Data_HighSpawnLimit","int 1 40000","GameMode_UnlimitedMining",25000,0,0);
+   RTB_registerPref("Brick Limit"      ,"Unlimited Mining","$Dig_Data_BrickLimit",    "int 0 350000","GameMode_Unlimited_Mining",250000,0,0);
+   RTB_registerPref("Heatsuit Cost"    ,"Unlimited Mining","$Dig_Data_HeatsuitCost",  "int 0 5000",  "GameMode_Unlimited_Mining",200,0,0);
+   RTB_registerPref("Radiation suit Cost","Unlimited Mining","$Dig_Data_RadsuitCost", "int 0 5000",  "GameMode_Unlimited_Mining",500,0,0);
+   RTB_registerPref("Light Cost"       ,"Unlimited Mining", "$Dig_Data_LightCost",    "int 0 5000",  "GameMode_Unlimited_Mining",25,0,0);
+   RTB_registerPref("Dirt Cost"        ,"Unlimited Mining", "$Dig_Data_DirtCost",     "int 0 5000",  "GameMode_Unlimited_Mining",1,0,0);
+   RTB_RegisterPref("Kill Warning"     ,"Unlimited Mining", "$Dig_Data_KillWarning",  "int 1 500",   "GameMode_Unlimited_Mining",3,0,0);
+   RTB_RegisterPref("Kill Limit"       ,"Unlimited Mining", "$Dig_Data_KillLimit",    "int 1 500",   "GameMode_Unlimited_Mining",4,0,0);
+   RTB_RegisterPref("Low Spawn Limit"  ,"Unlimited Mining", "$Dig_Data_LowSpawnLimit","int 1 10000", "GameMode_Unlimited_Mining",7000,0,0);
+   RTB_RegisterPref("High Spawn Limit" ,"Unlimited Mining", "$Dig_Data_HighSpawnLimit","int 1 40000","GameMode_Unlimited_Mining",25000,0,0);
   }
 else
   {
