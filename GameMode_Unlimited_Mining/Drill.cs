@@ -615,7 +615,7 @@ function serverCMdBuyTurboDrill(%client)
        return;
       }
     MessageClient(%client, '', "<color:FFFF00>Turbo drill purchased for 10 pick levels");
-    MessageClient(%client, '', "<color:FFFF00>Your drills will run twice as fast");
+    MessageClient(%client, '', "<color:FFFF00>Your drills will run 3x as fast");
     MessageClient(%client, '', "<color:FFFF00>This will last until you log out");
     %client.TurboDrill=150;
     %client.addPick(-10);
@@ -637,4 +637,3 @@ function serverCMdBuySuperTurboDrill(%client)
     %client.addPick(-200);
     AddLog(%client, "TurboDrill | super");
    }
-
