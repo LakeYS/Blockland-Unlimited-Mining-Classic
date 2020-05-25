@@ -6,7 +6,7 @@ if (isFile("Add-Ons/System_ReturnToBlockland/server.cs"))
    if (!$RTB::RTBR_ServerControl_Hook)
      exec("Add-Ons/System_ReturnToBlockland/RTBR_ServerControl_Hook.cs");
 
-   RTB_registerPref("Brick Limit"      ,"Unlimited Mining","$Dig_Data_BrickLimit",    "int 0 350000","GameMode_Unlimited_Mining",250000,0,0);
+   RTB_registerPref("Brick Limit"      ,"Unlimited Mining","$Dig_Data_BrickLimit",    "int 0 1000000","GameMode_Unlimited_Mining",500000,0,0);
    RTB_registerPref("Heatsuit Cost"    ,"Unlimited Mining","$Dig_Data_HeatsuitCost",  "int 0 5000",  "GameMode_Unlimited_Mining",200,0,0);
    RTB_registerPref("Radiation suit Cost","Unlimited Mining","$Dig_Data_RadsuitCost", "int 0 5000",  "GameMode_Unlimited_Mining",500,0,0);
    RTB_registerPref("Light Cost"       ,"Unlimited Mining", "$Dig_Data_LightCost",    "int 0 5000",  "GameMode_Unlimited_Mining",25,0,0);
@@ -18,7 +18,7 @@ if (isFile("Add-Ons/System_ReturnToBlockland/server.cs"))
   }
 else
   {
-   $Dig_Data_BrickLimit = 350000;   // reset server after this # of bricks
+   $Dig_Data_BrickLimit = 500000;   // reset server after this # of bricks
    $Dig_Data_lightCost=25;
    $Dig_Data_HeatSuitCost=200;
    $Dig_Data_DirtCost=1;
