@@ -643,7 +643,7 @@ function Dig_RestoreMoney()
    {
     $ModeMoney["normal"]=1;
     $ModeMoney["power"]=0;
-    $ModeMoney["bomb"]=-1;
+    $ModeMoney["bomb"]=0;
     $ModeMoney["drill"]=0;
     messageAll('', "<color:00FF00>All ores are now worth their original amount");
 
