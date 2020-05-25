@@ -678,11 +678,17 @@ package Dig_package
        %this.player.tool[0] = DiggingPickaxeItem.getID();
        MessageClient(%this, 'MsgItemPickup', '', 0, DiggingPickaxeItem.getID() );
 
+       if(!%client.GunDisabled)
+       {
+         %this.player.tool[1] = GunItem.getID();
+         MessageClient(%this, 'MsgItemPickup', '', 1, GunItem.getID() );
+       }
+
        // Admins also get a wrench
        if ( %this.isAdmin)
          {
-          %this.player.tool[1] = WrenchItem.getID();
-          MessageClient(%this, 'MsgItemPickup', '', 1, WrenchItem.getID() );
+          %this.player.tool[2] = WrenchItem.getID();
+          MessageClient(%this, 'MsgItemPickup', '', 2, WrenchItem.getID() );
          }
 
        // let player place cement
