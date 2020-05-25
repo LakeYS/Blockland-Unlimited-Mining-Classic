@@ -62,13 +62,6 @@ function servercmdstartDig(%client)
       }
     // check for required color set
 
-    // is it downloaded?
-    if ( !isFile("Add-ons/Colorset_Trueno/colorSet.txt") )
-      {
-       messageClient(%client, '', "<color:FF0000>You do not have the right color set installed.  Please read instructions.txt included with the mod");
-       messageClient(%client, '', "<color:FF0000>You can also goto the forums to download the required colorset");
-       return;
-      }
     // is it activated?
     if ( getColorIDTable(54) !$= "0.803922 0.666667 0.486275 1.000000" || getColorIDTable(45) !$= "0.976471 0.976471 0.976471 1.000000" )
       {
