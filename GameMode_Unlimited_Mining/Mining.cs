@@ -34,6 +34,10 @@ $Dig_Data_HighSpawnLimit=25000;
 $Brick_Z = 50000;
 $BrickOffset = "0 0 " @ $Brick_Z;
 
+// Change the display name in the server list.
+// This overrides the server from displaying as "Custom" in a custom configuration.
+$GameModeDisplayName = "Unlimited Mining";
+
 exec("./miningDatablocks.cs");
 exec("./monitoring.cs");
 exec("./BigNumber.cs");
