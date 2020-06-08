@@ -1,0 +1,129 @@
+<version:12.0>
+	2012/9/15
+	Updates and rewrites for v21
+</version>
+
+<version:11.0>
+	Fix for ore editor to add new ores.
+</version>
+
+<version:10.0>
+	COMPLETE REWRITE OF ORES
+	<b>--**Custom Ores from v9 and before will not work**--</b>
+	<ul>
+		<li>ores can have custom effects</li>
+		<li>ore editor updated to work in multiplayer games</li>
+
+		<li>new pick model. now requires you have the RPG_Tool addon</li>
+		<li>updated help texts</li>
+		<li>paintable cement</li>
+		<li>structures - create stuff from cement blocks. say /help2 for more info</li>
+		<li>invulnerable cement</li>
+		<li>Teleporter: say: /telporter to place a teleport brick. A cement placer is required to place one. Players do not spawn at their teleporter after dieing</li>
+		<li>Lava blobs - Lava now spawns in "blobs" instead of individual bricks.</li>
+		<li>Ore Veins - Ores now spawn in lines, or veins.</li>
+		<li>Radioactive ores: below a depth of -4000 ores have a chance to be radioactive.</li>
+		<li>Admin editor (for admin only) - see instructions.txt for more info</li>
+	</ul>
+</version>
+
+<version:9.0>
+	N00b proofing
+	<ul>
+		<li>message if the right colorset is not downloaded and activated</li>
+		<li>message if the 4x4 cube bricks are missing</li>
+		<li>Various bugfixes</li>
+	</ul>
+</version>
+
+<version:8.0>
+	<b>Lotto changes</b>
+	<ul>
+		<li>lotto blocks now only take/give 1 pick level at a time</li>
+		<li>lotto blocks now give dirt, bombs, and death as rewards. Cash and heatsuits are unchanged</li>
+	</ul>
+
+	<b>DRILL (Laser Drills)</b>
+	<ul>
+		<li>/drill depth width Drills a circular hole. depth and width are measured in bricks. Max size for players is /drill 100 5 Admin has no limit on size, so take care not to lag the server.</li>
+		<li>Drills are powered by dirt. If you dont have enough, the game will say how much you need.</li>
+		<li>/buy dirt number purchase dirt. Default price is $1 for 1 dirt</li>
+	</ul>
+
+	<b>Donate</b>
+	<ul>
+		<li>/donatepick player amount Give player some of your pick levels</li>
+		<li>/donate player amount Give player some of your money</li>
+		<li>/donateHS player amount Give player some of your heatsuits</li>
+		<li>/donateDirt player amount Give player some of your dirt</li>
+	</ul>
+
+	<b>Admin commands</b>
+	If you are the host, you can type any of the following in the console:
+	<ul>
+		<li>GiveDirt(amount); Give everyone amount of dirt</li>
+		<li>GiveBombs(size); Give everyone a free level size bomb</li>
+		<li>GiveHS(number); Give everyone number free heatsuits</li>
+	</ul>
+
+	<b>RTB support</b>
+	A Number of the unlimited mining properties are now controllable from the RTB Server control menu:
+	<ul>
+		<li>Brick Limit Default: 180000 - When the brick count passes this value, the server will auto reset</li>
+		<li>Heatsuit Cost Default: $200 - Price of each heatsuit layer</li>
+		<li>Light Cost Default: $25 - Cost to buy a light</li>
+		<li>Dirt Cost Default: $1 - Cost to buy 1 dirt</li>
+		<li>Bomb Cost Default: $1400 - Cost multiplier for each bomb level</li>
+		<li>Bomb Size Max Default: 35 - Biggest bomb the server will let you explode</li>
+		<li>Bomb Size Buy Limit Default: 20 - Biggest bomb a player may buy</li>
+	</ul>
+</version>
+
+<version:7.0>
+	Fix for orename '0' in ore editor
+</version>
+
+<version:6.0>
+	Update to fix typos
+</version>
+
+<version:5.0>
+</version>
+
+<version:4.0>
+	<b>BOMBs</b>
+	<ul>
+		<li>/buy bomb size (size = 1-15)</li>
+		<li>hit any brick with your pick to trigger the bomb</li>
+	</ul>
+
+	<b>Lotto blocks</b>
+	<ul>
+		<li>Look for glowing green bricks</li>
+		<li>They have Lots of health</li>
+		<li>when mined, lotto blocks will give a reward: Cash, Pick levels or heatsuit layers</li>
+		<li>lotto block rewards will be an add -OR- a subtract.</li>
+		<li>The deeper the lotto block the more health and the more it adds/subtracts.</li>
+		<li>you can easily go into debt with cash and heatsuits. but pick level will never go below 1</li>
+	</ul>
+</version>
+
+<version:3.0>
+	<ul>
+		<li>misc bug fixes</li>
+		<li>Players can now rename their discovered ores</li>
+		<li>Added OreEditor gui for host</li>
+		<li>Added brick count monitor and auto reset function</li>
+	</ul>
+</version>
+
+<version:2.0>
+	<ul>
+		<li>Added fix for v15.</li>
+		<li>Fixed infinite money exploit.</li>
+	</ul>
+</version>
+
+<version:1.0>
+	Initial release
+</version>
