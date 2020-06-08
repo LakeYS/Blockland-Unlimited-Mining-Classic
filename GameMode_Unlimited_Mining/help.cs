@@ -17,16 +17,6 @@ if (isFile("Add-Ons/System_ReturnToBlockland/server.cs"))
 // help text and/or display a GUI if client has RTB
 function serverCmdHelp(%client, %command)
   {
-   if ( getSubstr(%command,0,5) $= "admin")
-     {
-      messageClient(%client, '', "<color:FFFFFF>How To Get Admin");
-      messageClient(%client, '', "<color:FFFF00>1)  <color:FFFFFF>1. DONT ASK!!!    the more you ask, the longer it takes");
-      messageClient(%client, '', "<color:FFFF00>2)  <color:FFFFFF>2. Help out others - answer questions");
-      messageClient(%client, '', "<color:FFFF00>3)  <color:FFFFFF>3. Spend lots of time in the server");
-      messageClient(%client, '', "<color:FFFF00>4)  <color:FFFFFF>4. Be nice to everyone");
-      messageClient(%client, '', "<color:FFFF00>5)  <color:FFFFFF>5. Wait for the host to notice you and grant Admin status");
-      return;
-     }
    if ( %command $="drillmore")
      {
       messageClient(%client, '', "<color:FFFF00>Drill help <color:00FF00>(advanced)");
