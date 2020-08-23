@@ -70,7 +70,7 @@ function servercmdstartDig(%client)
     if ( getColorIDTable(54) !$= "0.803922 0.666667 0.486275 1.000000" || getColorIDTable(45) !$= "0.976471 0.976471 0.976471 1.000000" )
       {
        messageClient(%client, '', "<color:FF0000>You do not have Trueno's colorset<color:FFFFFF>Activated");
-       messageClient(%client, '', "<color:FFFFFF>Activate the color set via RTB, or search the forums for instructions how to activate a colorset");
+       messageClient(%client, '', "<color:FFFFFF>Activate the color set via RTB, the Blockland Glass mod manager, or search the forums for instructions how to activate a colorset");
        return;
       }
 
