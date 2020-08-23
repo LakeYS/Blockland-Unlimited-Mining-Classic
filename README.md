@@ -13,6 +13,10 @@ Here are some highlights of what we're looking to work on:
 
 ...And any other optimizations/fixes that improve the game-mode!
 
+# Media
+![Screenshot 1](https://i.imgur.com/wDSMsr4.jpg)
+![Screenshot 2](https://i.imgur.com/EGCUAak.jpg)
+
 # Contact
 Feel free to reach out on [Discord](https://discord.gg/s3vCQba) or [open an issue](https://github.com/LakeYS/Blockland-Unlimited-Mining-Classic/issues).
 
