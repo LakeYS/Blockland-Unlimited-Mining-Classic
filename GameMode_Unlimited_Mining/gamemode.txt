@@ -7,7 +7,6 @@ ADDON Weapon_Rocket_Launcher
 ADDON Vehicle_Jeep
 ADDON Brick_Large_Cubes
 ADDON Event_setPlayerTransform
-ADDON script_mute
 ADDON System_ReturnToBlockland
 ADDON GameMode_Unlimited_Mining
 
@@ -40,4 +39,3 @@ $MiniGame::SelfDamage 0
 $MiniGame::useAllPlayersBricks 0
 $MiniGame::useSpawnBricks 0
 $MiniGame::weaponDamage 1
-
