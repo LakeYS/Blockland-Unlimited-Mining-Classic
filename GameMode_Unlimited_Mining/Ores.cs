@@ -118,7 +118,7 @@ function DirtLayers::Setup(%this)
       {
        name = %this.MiddleLayer;
        sDepth = 750;
-       health=10;
+       health=5;
       };
 
     // Middle Layer
