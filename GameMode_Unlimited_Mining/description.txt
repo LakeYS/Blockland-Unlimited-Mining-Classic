@@ -1,2 +1,3 @@
 Unlimited Infinite Mining
 By Red_Guy, with fixes from the community
+Based on Infinite Mining by Kalphiter
