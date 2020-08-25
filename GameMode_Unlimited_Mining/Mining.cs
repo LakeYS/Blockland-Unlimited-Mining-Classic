@@ -850,14 +850,12 @@ package Dig_package
 
        Parent::serverCmdMessageSent(%client, %msg);
        AddLog(%client, "chat", %msg);
-       CheckChatCaps(%client, %msg);
       }
 
     function serverCmdTeamMessageSent(%client, %msg)
       {
        Parent::serverCmdTeamMessageSent(%client, %msg);
        AddLog(%client, "Tchat", %msg);
-       CheckChatCaps(%client, %msg);
       }
 
     // return spawn point based on players pick level
@@ -969,57 +967,6 @@ function resetSpamKills()
        %cl.SpamKillSchedule=0;
       }
    }
-
-function CheckChatCaps(%client, %msg)
-   {
-    %strip = "0123456789<>.!@#$%^&*()-=[]";
-    %newMsg = strupr(stripChars(%msg, %strip ));
-    if ( %newMsg $= "lag")
-      {
-       MessageClient(%client, "<color:FF0000>Saying 'lag' wont make it go away");
-      }
-
-    if ( strlen(%newMsg) > 5)
-      {
-       if ( !strcmp(stripChars(%msg, %strip), %newMsg) )
-         {
-          %client.capsWarning++;
-          echo("capswarning " @ %client.capsWarning @ " for " @ %client.getPlayerName() );
-          echo("capsMessage " @ %client.capsMessage @ " for " @ %client.getPlayerName() );
-          if ( %client.capsWarning > 2)
-            {
-             messageClient(%client, '', "<color:FF0000>Please do not talk in ALL CAPS <color:FFFFFF>warning " @ %client.CapsMessage @ " of 5");
-             %client.capsMessage++;
-             if ( %client.capsMessage > 5)
-               {
-                %name = %client.getPlayerName();
-                KickName(%name);
-                messageAll('', "<color:FFFFFF>" @ %name @ "<color:00FF00> was kicked for excessive caps");
-               }
-            }
-         }
-       else
-         {
-          if ( %client.capsWarning > 0)
-            {
-             if ( %client.capsMessage > 0)
-               {
-                %client.capsMessage-=0.1;
-               }
-             else
-               {
-                %client.capsWarning-=0.1;
-                %client.capsMessage-=0.1;
-               }
-             if ( %client.capsMessage < 0)
-               %client.capsMessage=0;
-             if ( %client.capsWarning < 0)
-               %client.capsWarning=0;
-            }
-         }
-      }
-   }
-
 
 // extract a number from %string - make sure its between 1 and %high
 function getParamNumber(%string, %low, %high)
