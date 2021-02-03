@@ -10,6 +10,7 @@ ADDON Event_setPlayerTransform
 ADDON System_ReturnToBlockland
 ADDON GameMode_Unlimited_Mining
 
+$Server::GhostLimit 1000000
 
 $EnvGuiServer::Waterfile NONE
 $EnvGuiServer::Groundfile Add-ons/Ground_IT/dirt.ground
