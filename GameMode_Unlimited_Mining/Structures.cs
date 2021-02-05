@@ -68,7 +68,7 @@ function Dig_DropCement(%client, %brick, %normal, %invuln)
 
       %pos = getWords(%brick.getTransform(),0,2);
       %pos2 = vectorAdd(%pos,vectorScale(%normal,2));
-      if ( !Dig_CanPlaceCement(%pos2))
+      if ( !Dig_CanPlaceCement(%pos2, %invuln))
   			{
          Dig_DisplayError(%client, "ERROR<color:FFFFFF>Cant place cement there");
          return;
@@ -116,7 +116,7 @@ function GameConnection::Dig_enableCement(%client)
   }
 
 // return true if its ok to place cement at %pos
-function Dig_CanPlaceCement(%pos)
+function Dig_CanPlaceCement(%pos, %invuln)
    {
     if ( !$Dig_on)
       {
@@ -137,7 +137,7 @@ function Dig_CanPlaceCement(%pos)
       {
        %spawn = PlayerDropPoints.getObject(%a);
        %pos2 = VectorSub(%spawn.position, %pos);
-       if ( VectorLen(%pos2) < 25)
+       if ((%invuln && VectorLen(%pos2) < 150) || (!%invuln && VectorLen(%pos2) < 25))
          {
           return false;
          }
