@@ -1093,7 +1093,6 @@ function BuyInsurance(%client, %amount)
    {
     if ( %amount < 0)
       {
-       FineForCheating(%client, mabs(%amount) );
        return;
       }
     if ( %amount < 5)

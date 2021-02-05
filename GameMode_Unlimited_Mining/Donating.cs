@@ -158,7 +158,6 @@ function DonateCheckBigNumber(%client, %PlayerName, %Amount, %clientAmount, %des
       {
        Dig_DisplayError(%client, "Ha Ha, funny<color:OOFFOO> Cannot donate " @ %desc @ " to yourself");
        AddLog(%client, "Donate", "Donate self denied", 1);
-       FineForCheating(%client, 150);
        return false;
       }
     %temp = BigNumberFromString(%amount).add(%fee);
@@ -170,7 +169,6 @@ function DonateCheckBigNumber(%client, %PlayerName, %Amount, %clientAmount, %des
 
     if ( %amount < 0)
       {
-       FineForCheating(%client, 35620);
        return false;
       }
 
@@ -187,4 +185,3 @@ function filterString(%string,%allowed)
    }
    return %return;
 }
-

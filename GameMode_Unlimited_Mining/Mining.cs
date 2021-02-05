@@ -491,14 +491,6 @@ function serverCmdBuyradSuit(%client, %layerValue)
     }
   }
 
-// Penalize %client for cheating
-function FineForCheating(%client, %amount)
-   {
-    Dig_DisplayError(%client, "You have been fined $" @ %amount @" for trying to cheat");
-    %client.AddMoney( -%amount, "Fine cheating");
-    %client.sendMiningStatus();
-   }
-
 function DiggingPickaxeImage::onFire(%this, %obj, %slot)
    {
     parent::onFire(%this, %obj, %slot);
