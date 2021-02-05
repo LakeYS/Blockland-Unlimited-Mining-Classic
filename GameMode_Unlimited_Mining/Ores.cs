@@ -25,7 +25,8 @@ if ( !isObject(OreData) )
        new ScriptObject(MineOre) { name="Silver";           value=15;    color=30; minPercent=84;   maxPercent=85;   depth=0;   veinLength=11; };
        new ScriptObject(MineOre) { name="Diamond";          value=100;   color=17; minPercent=85;   maxPercent=86;   depth=0;   veinLength=5;  };
        new ScriptObject(MineOre) { name="Platinum";         value=50;    color=41; minPercent=86;   maxPercent=87;   depth=0;   veinLength=10; };
-       new ScriptObject(MineOre) { name="Epicness";        value=1000000; color=7; minPercent=0.1;  maxPercent=0.2;  depth=12000;veinLength=2; NoBomb=1;minPick=1000; };
+       new ScriptObject(MineOre) { name="ATM Machine";        value=1000000; color=6; minPercent=0.1;  maxPercent=0.2;  depth=12000;veinLength=2; NoBomb=1;minPick=1000; };
+       new ScriptObject(MineOre) { name="Epicness";        value=1000000; color=7; minPercent=0.1;  maxPercent=0.2;  depth=-12000;veinLength=2; NoBomb=1;minPick=1000; };
        new ScriptObject(MineOre) { name="Starillite";       value=31415; color=45; minPercent=99.5; maxPercent=100;  depth=-25000; colorfx=1; veinLength=18;minPick=25000; };
       };
   }
