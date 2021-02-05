@@ -128,13 +128,7 @@ function upgradeCheck(%client, %interval)
           messageClient(%client, '', "<color:FFFFFF>Please wait before upgrading again");
           %client.upgradeWait++;
           echo("upgrade wait " @ %client.upgradeWait SPC %client.getPlayerName() );
-          if ( %client.upgradeWait > 4)
-            {
-             AddLog(%client, "kick","upgrade spam");
-             %name = %client.getPlayerName();
-             KickName(%name);
-             messageAll('', "<color:FFFFFF>" @ %name @ "<color:00FF00> was kicked for spamming upgrades");
-            }
+
           return false;
          }
      }
