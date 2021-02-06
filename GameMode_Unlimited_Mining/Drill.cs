@@ -492,7 +492,7 @@ function Dig_DoOreDrill(%brick, %pos1, %client, %normal, %level)
           Dig_DecrementDrill(%client);
           return;
          }
-       if ( !%client.isSuperAdmin )
+       if ( !%client.isSuperAdmin && !$Dig_AdminCheats )
          if ( %client.dirt.greaterThan(100))
            {
             %client.dirt.subtract(100);
