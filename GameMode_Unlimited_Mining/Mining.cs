@@ -15,6 +15,7 @@ if (isFile("Add-Ons/System_ReturnToBlockland/server.cs"))
    RTB_RegisterPref("Kill Limit"       ,"Unlimited Mining", "$Dig_Data_KillLimit",    "int 1 500",   "GameMode_Unlimited_Mining",4,0,0);
    RTB_RegisterPref("Low Spawn Limit"  ,"Unlimited Mining", "$Dig_Data_LowSpawnLimit","int 1 10000", "GameMode_Unlimited_Mining",7000,0,0);
    RTB_RegisterPref("High Spawn Limit" ,"Unlimited Mining", "$Dig_Data_HighSpawnLimit","int 1 40000","GameMode_Unlimited_Mining",25000,0,0);
+   RTB_registerPref("Admin Cheats"     ,"Unlimited Mining", "$Dig_AdminCheats","bool","GameMode_Unlimited_Mining",false,0,0);
   }
 else
   {

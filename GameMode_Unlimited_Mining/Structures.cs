@@ -88,7 +88,7 @@ function Dig_DropCement(%client, %brick, %normal, %invuln)
 
       %brick.isCement=1;
       %brick.health=200+%client.getPick();
-      if ( %client.isAdmin)
+      if ( %client.isAdmin && $Dig_AdminCheats)
 			  {
          // admin powers!
 				 %brick.health*=2;
@@ -97,7 +97,7 @@ function Dig_DropCement(%client, %brick, %normal, %invuln)
       %client.sendMiningStatus();
 
       // let client place another brick in 1.5 seconds.  prevents spamming
-      if ( %client.isAdmin)
+      if ( %client.isAdmin && $Dig_AdminCheats)
         {
          %client.canPlaceCement=0;
         }

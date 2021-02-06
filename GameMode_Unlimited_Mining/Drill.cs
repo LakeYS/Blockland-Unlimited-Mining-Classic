@@ -34,7 +34,7 @@ function serverCmdDrill(%client, %depth, %size)
 
     %client.MineDrill = mabs(mFloor(%depth));
     %client.MineDrillSize = mabs(mFloor(%size));
-    if ( !%client.isAdmin )
+    if ( !%client.isAdmin && !$Dig_AdminCheats )
     {
     %client.minedrill = GetParamNumber(%client.mineDrill,1, 100+%client.getRank()*2 );
     %client.MinedrillSize = GetParamNumber(%client.mineDrillSize,0, 5+ mFloor(%client.getRank() / 10) );
@@ -123,7 +123,7 @@ function serverCmdDrillD(%client, %size)
     %client.MineDrill = 1;
     %client.mineOreDrill = 0;
     %client.MineDrillSize = mabs(mFloor(%size));
-    if ( !%client.isAdmin )
+    if ( !%client.isAdmin && !$Dig_AdminCheats )
       {
        %client.MinedrillSize = GetParamNumber(%client.mineDrillSize,0, 10+ mFloor(%client.getRank() / 10) );
       }
@@ -306,7 +306,7 @@ function Dig_DoDrill(%brick, %pos1, %client, %normal, %level)
           Dig_DecrementDrill(%client);
           return;
          }
-       if ( !%client.isAdmin)
+       if ( !%client.isAdmin && !$Dig_AdminCheats )
          if ( %client.dirt.greaterThan(2))
            {
             %client.dirt.subtract(1);
