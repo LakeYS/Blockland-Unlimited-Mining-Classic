@@ -325,7 +325,7 @@ function serverCmdBuy(%client, %thing, %level)
   {
     if (%client.GunDisabled)
     {
-      Dig_DisplayError(%client, "Your gun priveleges are revoked");
+      Dig_DisplayError(%client, "Your gun privileges are revoked");
       return;
     }
     buyThing(%client, GunItem, 250);
