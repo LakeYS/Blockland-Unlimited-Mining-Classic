@@ -10,6 +10,11 @@ ADDON Event_setPlayerTransform
 ADDON System_ReturnToBlockland
 ADDON GameMode_Unlimited_Mining
 
+ADDON Emote_Alarm
+ADDON Emote_Confusion
+ADDON Emote_Hate
+ADDON Emote_Love
+
 $Server::GhostLimit 1000000
 
 $EnvGuiServer::Waterfile NONE
