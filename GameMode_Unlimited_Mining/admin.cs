@@ -89,60 +89,6 @@ function listMiners()
     echo("Drills : " @ $Dig_Data_ActiveDrills @ " buff x" @ $ModeMoney["normal"]);
    }
 
-function kickName(%playername)
-   {
-    %client = findclientbyname(%playername);
-    if ( !isObject(%client) )
-      {
-       echo("nobody named: " @ %playername);
-       return;
-      }
-    %fakeClient= new ScriptObject(FakeClient) {
-        isAdmin=1;
-        bl_id=getNumKeyID();
-        name="Console";
-       };
-    serverCmdKick(%fakeClient, %client);
-   }
-
-// This doesnt work yet
-function BanName(%playerName, %reason)
-   {
-    %client = findclientbyname(%playername);
-    if ( !isObject(%client) )
-      {
-       echo("nobody named: " @ %playername);
-       return;
-      }
-    %fakeClient= new ScriptObject(FakeClient) {
-     isAdmin=1;
-     bl_id=getNumKeyID();
-     name="Console";
-    };
-    //Entering serverCmdBan(4950749, 0, 21419, 60, test)
-    //   BAN issued by Red_Guy BL_ID:20646 IP:98.210.14.49
-    //     +- victim name = ALLON
-    //     +- victim bl_id = 21419
-    //     +- ban time = 60
-    //     +- ban reason = test
-    //   Entering BanManagerSO::addBan(4199, 4950749, 0, 21419, test, 60)
-    //      Entering BanManagerSO::RemoveBanBL_ID(4199, 21419)
-    //      Leaving BanManagerSO::RemoveBanBL_ID() - return 4199
-    //      Entering getCurrentMinuteOfYear()
-    //      Leaving getCurrentMinuteOfYear() - return 307967
-    //      Entering getCurrentYear()
-    //      Leaving getCurrentYear() - return 10
-    //   Leaving BanManagerSO::addBan() - return 5
-    //   Entering BanManagerSO::saveBans(4199)
-    //   Leaving BanManagerSO::saveBans() - return
-    //   Entering MessageAll(134, 128, Red_Guy, ALLON, 21419, 60, test)
-    //      Entering messageClient(4950749, 134, 128, Red_Guy, ALLON, 21419, 60, test, , , , , , , , )
-    //      Leaving messageClient() - return
-    //   Leaving MessageAll() - return
-    //Leaving serverCmdBan() - return 4950749
-    servercmdban(%fakeClient,%client,%Client.BLID,60,%reason);
-   }
-
 // for admin only
 function serverCmdEditOre(%client)
    {
@@ -341,49 +287,4 @@ function servercmdKill(%client, %playername)
          }
        %playerClient.player.kill();
       }
-   }
-
-function ServerCmdAutoKick(%client, %playerName)
-   {
-    if ( %client.isAdmin)
-      {
-       return ;Autokick(%playerName);
-      }
-    messageClient(%client, '', "<color:FF0000>Access Denied<color:FFFFFF> Admin-only function");
-   }
-
-// kick %name everytime they log in
-function AutoKick(%name)
-   {
-    %client = findclientbyname(%name);
-    if ( isObject(%client) )
-      {
-       if ( %client.hasspawnedOnce)
-         kickname(%name);
-      }
-
-    schedule(2000, 0, "Autokick", %name);
-   }
-
-function mute(%name)
-   {
-    %client = findclientbyname(%name);
-    if ( isObject(%client) )
-      {
-       %client.isMuted = true;
-       echo("Muted " @ %client.getPlayerName() );
-      }
-    else
-      echo("nobody named " @ %name);
-   }
-
-function msg(%name, %text)
-   {
-    %client = findclientbyname(%name);
-    if ( isObject(%client) )
-      {
-       messageClient(%client, '', "<color:FFFFFF>priv msg from console:<color:00FF00> " @ %text);
-       echo("message sent to " @ %client.getPlayerName() );
-     }
-
    }
