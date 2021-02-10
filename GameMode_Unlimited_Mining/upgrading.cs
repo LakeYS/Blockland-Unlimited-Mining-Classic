@@ -22,11 +22,6 @@ function serverCmdUpgradePick(%client)
   %client.sendMiningStatus();
 }
 
-function serverCmdSellPick(%client)
-{
-  messageClient(%client, '', "Pick selling is currently unavailable.");
-}
-
 // upgrade pick w/o any chat spam
 function serverCmdUpgradePickS(%client)
 {

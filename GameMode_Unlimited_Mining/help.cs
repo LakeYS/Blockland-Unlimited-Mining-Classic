@@ -63,7 +63,6 @@ function serverCmdHelp(%client, %command)
   messageClient(%client, '', "<color:FFFFFF>Infinite Mining Mod help");
   messageClient(%client, '', "<lmargin:0><color:FFFFFF>upgrade pick:<lmargin:120> <color:FF0088>/upgradepick");
   messageClient(%client, '', "<lmargin:0><color:FFFFFF>fast upgrade:<lmargin:120> <color:FF0088>/upgradeall<color:FFFFFF> (costs extra)   -or- <color:FF0088>/upgradeall <number>");
-  messageClient(%client, '', "<lmargin:0><color:FFFFFF>sell picks<lmargin:120> <color:FF0088>/sellPick number   Sell some of your pick levels for money");
   messageClient(%client, '', "<lmargin:0><color:FFFFFF>heat suit:<lmargin:120> <color:FF0088>/buyheatsuit <number> \c3$"@$Dig_Data_HeatsuitCost @ "/layer");
   messageClient(%client, '', "<lmargin:0><color:FFFFFF>Light:<lmargin:120> <color:FF0088>/buylight \c3$"@ $Dig_Data_LightCost);
   messageClient(%client, '', "<lmargin:0><color:FFFFFF>Cement placer:<lmargin:120> <color:FF0088>/buy placer \c3$100");
@@ -102,7 +101,6 @@ function serverCmdHelp2(%client)
 
 function serverCmdHelp3(%client)
 {
-  messageClient(%client, '', "<lmargin:0><color:FFFFFF>Sell Pick:<lmargin:120> <color:FF0088>/sellpick <number>  sell your pick levels for money");
   messageClient(%client, '', "<lmargin:0><color:FFFFFF>Teleport Invite:<lmargin:120> <color:FF0088>/inviteTeleport player   let player use your teleporter once");
   messageClient(%client, '', "<lmargin:0><color:FFFFFF>Buy Teleport:<lmargin:120> <color:FF0088>/buyTeleport distance    +/- distance to teleport up or down<lmargin:0>");
   messageClient(%client, '', "<lmargin:0><color:FFFFFF>Buy Teleport:<lmargin:120> <color:FF0088>/buyTeleport X Y Z   +/- teleport X,Y,Z bricks from where you are<lmargin:0>");
