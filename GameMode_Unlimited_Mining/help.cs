@@ -106,4 +106,5 @@ function serverCmdHelp3(%client)
   messageClient(%client, '', "<lmargin:0><color:FFFFFF>Buy Teleport:<lmargin:120> <color:FF0088>/buyTeleport X Y Z   +/- teleport X,Y,Z bricks from where you are<lmargin:0>");
   messageClient(%client, '', "<lmargin:0><color:FFFFFF>Turbo Drill:<lmargin:120> <color:FF0088>/buyTurboDrill  Costs 10 picks.  your drills go 3x speed until you log out<lmargin:0>");
   messageClient(%client, '', "<lmargin:0><color:FFFFFF>Instant Drill:<lmargin:120> <color:FF0088>/buySuperTurboDrill  Costs 200 picks.  Your drills complete almost instantly.  Lasts until you log out<lmargin:0>");
+  messageClient(%client, '', "<lmargin:0><color:FFFFFF>Ore Drill:<lmargin:120> <color:FF0088>/oreDrill <depth> <width>   Costs more dirt to run.");
 }

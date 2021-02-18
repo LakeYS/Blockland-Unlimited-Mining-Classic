@@ -61,9 +61,6 @@ function serverCmdDrill(%client, %depth, %size)
 
 function serverCmdOreDrill(%client, %depth, %size)
 {
-  messageClient(%client, '', "Ore Drill test peroid is over");
-  return;
-
   if ( %depth ==0)
   {
     %client.MineDrill = 0;
@@ -306,27 +303,30 @@ function Dig_DoDrill(%brick, %pos1, %client, %normal, %level)
       Dig_DecrementDrill(%client);
       return;
     }
-    if ( !%client.isAdmin && !$Dig_AdminCheats )
-    if ( %client.dirt.greaterThan(2))
+    if ( $Dig_AdminCheats == false || %client.isSuperAdmin == false )
     {
-      %client.dirt.subtract(1);
-    }
-    else
-    {
-      if ( isObject(%client))
+      if ( %client.dirt.greaterThan(2))
       {
-        $Dig_Data_ActiveDrills-= %client.activeDrill;
-        messageClient(%client, '', "<color:FFFF00>your drill has run out of dirt");
-        %client.activeDrill=0;
-        %client.MineDrillDisc=0;
-        %client.sendMiningStatus();
+        %client.dirt.subtract(1);
       }
+      else
+      {
+        if ( isObject(%client))
+        {
+          $Dig_Data_ActiveDrills-= %client.activeDrill;
+          messageClient(%client, '', "<color:FFFF00>your drill has run out of dirt");
+          %client.activeDrill=0;
+          %client.MineDrillDisc=0;
+          %client.sendMiningStatus();
+        }
 
-      $Dig_Data_ActiveDrills--;
+        $Dig_Data_ActiveDrills--;
 
-      //echo("drill out of dirt " @ %client.getPlayerName() );
-      return;
+        //echo("drill out of dirt " @ %client.getPlayerName() );
+        return;
+      }
     }
+
     %pos = %brick.getPosition();
     %pos2 = vectorSub(%pos,vectorScale(%normal,2));
     Dig_MineBrick(%brick, %pos, %client, "drill");
@@ -492,25 +492,27 @@ function Dig_DoOreDrill(%brick, %pos1, %client, %normal, %level)
       Dig_DecrementDrill(%client);
       return;
     }
-    if ( !%client.isSuperAdmin && !$Dig_AdminCheats )
-    if ( %client.dirt.greaterThan(100))
+    if ( $Dig_AdminCheats == false || %client.isSuperAdmin == false )
     {
-      %client.dirt.subtract(100);
-    }
-    else
-    {
-
-      if ( isObject(%client))
+      if ( %client.dirt.greaterThan(30))
       {
-        $Dig_Data_ActiveDrills-= %client.activeDrill;
-        messageClient(%client, '', "<color:FFFF00>your ore drill has run out of dirt");
-        %client.activeDrill=0;
-        %client.MineDrillDisc=0;
-        %client.sendMiningStatus();
+        %client.dirt.subtract(30);
       }
+      else
+      {
 
-      $Dig_Data_ActiveDrills--;
-      return;
+        if ( isObject(%client))
+        {
+          $Dig_Data_ActiveDrills-= %client.activeDrill;
+          messageClient(%client, '', "<color:FFFF00>your ore drill has run out of dirt");
+          %client.activeDrill=0;
+          %client.MineDrillDisc=0;
+          %client.sendMiningStatus();
+        }
+
+        $Dig_Data_ActiveDrills--;
+        return;
+      }
     }
 
     %pos = %brick.getPosition();
