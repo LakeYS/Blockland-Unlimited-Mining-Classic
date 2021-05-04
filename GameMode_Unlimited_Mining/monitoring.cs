@@ -75,13 +75,13 @@ function servercmdStopDig(%client)
     return;
   }
   $Dig_stopDig=true;
-  Dig_Stopanyway(%client);
+  Dig_Stopanyway();
   cancel($Dig_MonitorTimer);
 
 }
 
 // stopdig regardless of who %client is
-function Dig_stopanyway()
+function Dig_stopanyway(%skipClear)
 {
   messageAll('', "<color:00FF00>Dig mode is off");
   $Dig_on = false;
@@ -109,12 +109,15 @@ function Dig_stopanyway()
   }
 
   // Clear all bricks
-  for ( %a=0; %a < MainBrickGroup.getCount(); %a++)
+  if(!%skipClear)
   {
-    %group = MainBrickGroup.getObject(%a);
-    if ( %group.getCount() > 0)
+    for ( %a=0; %a < MainBrickGroup.getCount(); %a++)
     {
-      %group.chainDeleteAll();
+      %group = MainBrickGroup.getObject(%a);
+      if ( %group.getCount() > 0)
+      {
+        %group.chainDeleteAll();
+      }
     }
   }
 
@@ -180,10 +183,14 @@ function Dig_resetGame()
 function getRealBrickCount()
 {
   %bricks = 0;
-  for (%i=0;%i<mainBrickGroup.getCount();%i++)
+  // Return 0 if no brick group -- likely means we're in the process of shutting down.
+  if(isObject(mainBrickGroup))
   {
-    %group = mainBrickGroup.getObject(%i);
-    %bricks += %group.getCount();
+    for (%i=0;%i<mainBrickGroup.getCount();%i++)
+    {
+      %group = mainBrickGroup.getObject(%i);
+      %bricks += %group.getCount();
+    }
   }
   return %bricks;
 }

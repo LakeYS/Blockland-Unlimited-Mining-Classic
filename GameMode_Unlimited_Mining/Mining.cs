@@ -893,6 +893,15 @@ package Dig_package
   //  {
   //   // since this seems to be a major source of console error spam - package to do nothing
   //  }
+
+  function onServerDestroyed()
+  {
+    $Dig_stopDig=true;
+    Dig_Stopanyway(true);
+    cancel($Dig_MonitorTimer);
+
+    return parent::onServerDestroyed();
+  }
 };
 
 function checkSpamKill(%client)
