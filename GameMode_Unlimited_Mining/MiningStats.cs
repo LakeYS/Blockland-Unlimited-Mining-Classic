@@ -211,9 +211,12 @@ function GameConnection::setArmor(%this, %value)
 }
 function GameConnection::setRankprefix(%this)
 {
+  if(%this.plainClanPrefix $= "" && %this.clanPrefix $= "")
+    %this.plainClanPrefix = %this.clanPrefix;
+    
   if ( %this.stats.rank > 0)
   {
-    %this.clanPrefix = "[" @ %this.stats.rank @ "] ";
+    %this.clanPrefix = "[" @ %this.stats.rank @ "] " @ %this.plainClanPrefix;
   }
   else
   {
