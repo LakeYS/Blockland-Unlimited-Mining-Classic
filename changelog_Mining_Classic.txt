@@ -1,3 +1,30 @@
+<version:13.0>
+	<b>Unlimited Mining Classic</b>
+	This is a restoration project by the community to fix and improve Unlimited Mining.
+	<ul>
+		<li>It's been a while.</li>
+		<li>Fixed dormant bombs stealing your money.</li>
+		<li>Renamed the game-mode to GameMode_Unlimited_Mining for GUI display, and to distinguish from the original version.</li>
+		<li>Raised the maximum brick limit to 1,000,000 to reflect the new default brick limit. The new default brick limit is 500,000.</li>
+		<li>Removed the nonexistent /sellPick command from /help.</li>
+		<li>Removed the redundant "/help admin" section.</li>
+		<li>Updated the colorset check and message for Blockland Glass and the now-built-in colorset.</li>
+		<li>Implemented some preliminary fixes to be able to run the game-mode under Custom (for enabling your own add-ons). This is a work-in-progress and some things are still broken.</li>
+		<li>Added a proper description to fit the game-mode menu.</li>
+		<li>Reduced the health of spawn layer dirt to 5. This helps make progress faster in the very beginning of the game.</li>
+		<li>Fixed the turbo drill message incorrectly reporting the drill as 2x as fast, instead of 3x.</li>
+		<li>You are no-longer "fined for trying to cheat" when doing things like donating negative money.</li>
+		<li>Altered Epicness spawns and added back the "ATM Machine" ore to reflect the behavior on Red_Guy's server.</li>
+		<li>The game-mode will no-longer kick you for spamming upgrades.</li>
+		<li>Bypasses given to admins (i.e. unlimited drills) are now disabled by default and must be activated using the "Admin cheats" pref.</li>
+		<li>Removed redundant console commands for things like kicking players.</li>
+		<li>Corrected spelling for "Your gun priveleges are revoked".</li>
+		<li>Re-enabled the ore drill via /oreDrill.</li>
+		<li>Fixed ranking system overwriting your opening clan tag.</li>
+		<li>The game-mode now cleans up properly when closed, meaning you can shut it down and start back up from the game-modes menu without a full restart.</li>
+	</ul>
+</version>
+
 <version:12.0>
 	2012/9/15
 	Updates and rewrites for v21
