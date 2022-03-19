@@ -7,7 +7,6 @@ ADDON Weapon_Rocket_Launcher
 ADDON Vehicle_Jeep
 ADDON Brick_Large_Cubes
 ADDON Event_setPlayerTransform
-ADDON System_ReturnToBlockland
 ADDON GameMode_Unlimited_Mining
 
 ADDON Emote_Alarm
