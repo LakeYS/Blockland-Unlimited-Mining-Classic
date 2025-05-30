@@ -1,5 +1,16 @@
 # Blockland-Unlimited-Mining-Classic
- A rework of the classic Unlimited Mining game-mode for Blockland. Unlimited Mining Classic brings numerous bugfixes and quality of life improvements to the original Unlimited Mining. The goal of this project is to fix up the game-mode while maintaining the classic gameplay.
+This is a revamp of Unlimited Mining that preserves the "classic" (e.g. Red_Guy's server) gameplay of Unlimited Mining.
+
+This is derived from version 12.0 of Unlimited Mining [found here](https://bl.kenko.dev/Add-ons/Retail/GameMode/GameMode_UnlimitedMining.zip).
+
+# What's different in this version?
+* The host and admins no-longer have cheats/special privileges (e.g. unlimited drills) at all times. Instead, this can be toggled with the "Admin cheats" pref.
+* Small quality-of-life tweaks to gameplay.
+    * The health of dirt has been adjusted so that mining is much quicker when first starting out.
+* A number of other tweaks, bugfixes, and code cleanup.
+    * Dormant bombs no-longer take money from you.
+    * Various fixes for loading/unloading via the game-modes menu.
+    * And more. A more comprehensive list of changes can be found in `changelog_Mining_Classic.txt`.
 
 # Contributing
 If you'd like to help improve Unlimited Mining, contributions via [pull requests](https://help.github.com/en/articles/creating-a-pull-request) are welcome. Check the issues tab to see some of the things that need to be worked on. The only guidelines are:
