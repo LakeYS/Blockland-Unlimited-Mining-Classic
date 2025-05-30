@@ -5,12 +5,19 @@ if (ForceRequiredAddOn("Tool_RPG") == $Error::AddOn_NotFound)
   return;
 }
 
+datablock ExplosionData(DiggingPickaxeExplosion : hammerExplosion)
+{
+  shakeCamera = false;
+  lightStartRadius = 0;
+};
+
 // pickaxe to mine stuff with -- projectile
 datablock projectileData(DiggingPickaxeProjectile : hammerProjectile)
 {
   directDamage = 5;
   lifeTime = 100;
   explodeOnDeath = false;
+  explosion = DiggingPickaxeExplosion;
 };
 
 // pickaxe to mine stuff with -- item for the tools inventory
