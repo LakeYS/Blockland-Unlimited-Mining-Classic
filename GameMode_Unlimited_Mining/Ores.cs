@@ -332,19 +332,18 @@ function DirtLayers::Setup(%this)
   // check to see if %brick can be made radioactive
   function CheckRadioActive(%brick)
   {
+    if (%brick.DirtType != 0)
+    return;
+
     if ( getrandom(1,2) == 2)
     {
       %depth = %brick.type.depth;
-      // depth of 0 means the brick type can appear anywhere
 
-      if ( %depth == 0)
-      {
-        %depth = $Dig_Radioactivedepth;
-      }
-      else
-      %depth = %brick.type.depth + $Dig_Radioactivedepth;
+      %depth = %brick.type.depth - $Dig_Radioactivedepth;
+      
+      %pos = VectorSub(%brick.position, $BrickOffset);
 
-      if ( getWord(%brick.position, 2) < %depth )
+      if ( mAbs(getWord(%pos, 2)) > mAbs(%depth) )
       {
         %brick.multiplier=getRandom(1,20);
         %brick.health*=%brick.multiplier*2;
