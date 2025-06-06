@@ -16,6 +16,7 @@ if (isFile("Add-Ons/System_ReturnToBlockland/server.cs"))
   RTB_RegisterPref("Low Spawn Limit"  ,"Unlimited Mining", "$Dig_Data_LowSpawnLimit","int 1 10000", "GameMode_Unlimited_Mining",7000,0,0);
   RTB_RegisterPref("High Spawn Limit" ,"Unlimited Mining", "$Dig_Data_HighSpawnLimit","int 1 40000","GameMode_Unlimited_Mining",25000,0,0);
   RTB_registerPref("Admin Cheats"     ,"Unlimited Mining", "$Dig_AdminCheats","bool","GameMode_Unlimited_Mining",false,0,0);
+  RTB_registerPref("Disable Ore Naming","Unlimited Mining", "$Dig_DisableOreNaming","bool","GameMode_Unlimited_Mining",false,0,0);
 }
 else
 {
@@ -28,6 +29,7 @@ else
   $Dig_Data_KillLimit=4;
   $Dig_Data_LowSpawnLimit=7000;
   $Dig_Data_HighSpawnLimit=25000;
+  $Dig_DisableOreNaming = false;
 }
 
 $Dig_Data_LowSpawnLimit=7000;
@@ -936,7 +938,8 @@ function checkSpamKill(%client)
 
 function DecrementSpamKill(%client)
 {
-  %client.kills--;
+  %client.kills--;
+
   echo("DecrementSpamKill " @ %client.getplayerName() SPC %client.kills @ " kills");
   if ( %client.kills < 1)
   {

@@ -79,6 +79,12 @@ function Dig_DiscoverOre(%client)
 // find the player's ore
 function serverCmdRenameOre(%client, %oreName)
 {
+  if ($Dig_DisableOreNaming)
+  {
+    Dig_DisplayError(%client, "You cannot rename your ore at this time");
+    return;
+  }
+
   %newOre = -1;
   for ( %a=0; %a < OreData.getCount(); %a++)
   {
