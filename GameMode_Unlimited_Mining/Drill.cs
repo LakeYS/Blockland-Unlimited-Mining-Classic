@@ -616,6 +616,13 @@ function serverCMdBuyTurboDrill(%client)
     Dig_DisplayError(%client, "You need at least 11 pick levels to purchase a turbo drill");
     return;
   }
+
+  if ( %client.TurboDrill == 150  || %client.TurboDrill == 1)
+  {
+    Dig_DisplayError(%client, "You already have a turbo drill or better");
+    return;
+  }
+
   MessageClient(%client, '', "<color:FFFF00>Turbo drill purchased for 10 pick levels");
   MessageClient(%client, '', "<color:FFFF00>Your drills will run 3x as fast");
   MessageClient(%client, '', "<color:FFFF00>This will last until you log out");
@@ -630,6 +637,12 @@ function serverCMdBuySuperTurboDrill(%client)
   if ( %client.getPick() < 201)
   {
     Dig_DisplayError(%client, "You need at least 201 pick levels to purchase an instant drill");
+    return;
+  }
+
+  if (%client.TurboDrill == 1)
+  {
+    Dig_DisplayError(%client, "You already have a super turbo drill");
     return;
   }
   MessageClient(%client, '', "<color:FFFF00>Instant Drill purchased for 200 pick levels");
